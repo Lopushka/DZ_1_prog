@@ -1,7 +1,7 @@
 ﻿//вывод массива
 static void OutputArrayToConsole(object[] newArray)
 {
-    Console.WriteLine("вывод массива: ");
+    Console.WriteLine("Вывод массива: ");
     for (int i = 0; i < newArray.Length; i++)
     {
 
@@ -35,26 +35,26 @@ if (quantity > 0)
             cnt++;
         }
     }
-    if (cnt > 0)
+    if (cnt >= 1)
     {
-        object[] newArray = new object [cnt];
+        object[] newArray = new object[cnt];
+        var j = 0;
         for (var i = 0; i < myArray.Length; i++)
         {
             var mark = myArray[i];
             char[] Array = mark.ToString().ToCharArray();
             if (Array.Length <= 3)
             {
-                for (var j = 0; j < newArray.Length; j++)
-                {
-                    newArray [j]=myArray[i];
-                }
+                newArray[j] = myArray[i];
+                j++;
             }
         }
+        Console.WriteLine("Массив из строк не более 3-х символов");
         OutputArrayToConsole(newArray);
     }
     else
     {
-        Console.WriteLine("Все строки больше 3 символов.");
+        Console.WriteLine("Все строки больше 3-x символов.");
     }
 
 }
